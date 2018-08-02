@@ -34,6 +34,16 @@ const handlers = {
     LoseGame: function() {
         this.response.speak('You lose. Play again?').listen('Play again?')
         this.emit(':responseReady')
+    },
+    'AMAZON.StopIntent': function() {
+        this.response.speak('Ok, let\'s play again soon.')
+        this.emit(':responseReady')
+    },
+
+    // Cancel
+    'AMAZON.CancelIntent': function() {
+        this.response.speak('Ok, let\'s play again soon.')
+        this.emit(':responseReady')
     }
 }
 
