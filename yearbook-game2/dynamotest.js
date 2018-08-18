@@ -11,7 +11,7 @@ const putParams = {
 	TableName: "yearbook-game-test-db",
 	Item: {
 		quote: {
-			text: `some_quote_${Date.now()}`,
+			text: "some_text",
 			from: "some_author",
 			to: "some_person"
 		},
@@ -44,7 +44,7 @@ const getAllFromDB = params => {
 			const quotes = Items.filter(item => {
 				return Object.keys(item).includes("quote")
 			})
-			console.log(quotes)
+			console.log(quotes[quotes.length - 1])
 		}
 	})
 }

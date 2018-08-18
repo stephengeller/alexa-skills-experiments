@@ -75,7 +75,6 @@ const handlers = {
 				userId: String(Date.now())
 			}
 		}
-		await docClient.put(putParams, function(err, data) {})
 
 		await docClient.scan(params, (err, data) => {
 			if (err) {
