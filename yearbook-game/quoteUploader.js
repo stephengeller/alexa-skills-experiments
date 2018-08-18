@@ -34,7 +34,9 @@ async function uploadQuotes(quotes) {
 			console.log(from, person.to)
 			putParams.Item.quote.from = from
 			putParams.Item.quote.text = text
-			putParams.Item.userId = `from_${from.toLowerCase()}_to_${person.to.toLowerCase()}`
+			putParams.Item.userId = `from_${from
+				.toLowerCase()
+				.replace(" ", "_")}_to_${person.to.toLowerCase().replace(" ", "_")}`
 			await writeToDB(putParams)
 		}
 	}
