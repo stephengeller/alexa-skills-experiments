@@ -1,6 +1,6 @@
 const AWS = require("aws-sdk")
 const docClient = new AWS.DynamoDB.DocumentClient({ region: "us-east-1" })
-const data = require("../quotes.json")
+const data = require("./quotes.json")
 
 const writeToDB = async params => {
 	const { from, to } = params.Item.quote
