@@ -17,26 +17,26 @@ const writeToDB = async params => {
 }
 
 async function uploadQuotes(quotes) {
-	for (let person of quotes) {
+	for (let person of quotes.data) {
 		let putParams = {
 			TableName: "yearbook-game-test-db",
 			Item: {
 				quote: {
 					text: "",
 					from: "",
-					to: quotes.to
+					to: person.to
 				},
 				userId: ""
 			}
 		}
-		for (let quote of person) {
+		for (let quote of person.quotes) {
 			let { from, text } = quote
+			console.log(from, person.to)
 			putParams.Item.quote.from = from
 			putParams.Item.quote.text = text
-			putParams.Item.userId = `from_${from.toLowerCase()}_to_${data.to.toLowerCase()}`
+			putParams.Item.userId = `from_${from.toLowerCase()}_to_${person.to.toLowerCase()}`
 			await writeToDB(putParams)
 		}
 	}
 }
-
-uploadQuotes()
+uploadQuotes(data)
