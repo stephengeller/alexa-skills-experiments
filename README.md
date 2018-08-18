@@ -1,18 +1,18 @@
 Alexa Skills Experiments
 ========================
 
-# Installation
+## Installation
 ```bash
 git clone git@github.com:stephengeller/alexa-skills-experiments.git
 cd alexa-skills-experiments
 ```
 
-# Current Skills
+## Current Skills
 
 ##### - `yearbook-game`: Skill using a lambda that queries DynamoDB for yearbook quotes, and asks the player who the quote was written by or for.
   
 
-# How To Use
+## How To Use
 
 #### `yearbook-game`
 - Update the `FUNCTION_NAME` variable in `deploy.sh` to point to a lambda on your AWS account. You may need to create a lambda for it first, in order for the code within it to be updated.
