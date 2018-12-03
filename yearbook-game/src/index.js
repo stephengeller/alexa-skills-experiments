@@ -62,6 +62,10 @@ const handlers = {
 		this.response.speak("Ok, let's play again soon.")
 		this.emit(":responseReady")
 	},
+    "AMAZON.HelpIntent": function() {
+        this.response.speak("Try saying Start the Yearbook Game.").listen()
+        this.emit(":responseReady")
+    },
 
 	// Cancel
 	"AMAZON.CancelIntent": function() {
