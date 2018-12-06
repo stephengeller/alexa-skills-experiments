@@ -76,6 +76,10 @@ const handlers = {
 		this.response.speak("Falling back, something went wrong.");
 		this.emit(":responseReady")
 	},
+	"AMAZON.HelpIntent": function() {
+		this.response.speak("Try saying 'Start the yearbook game'").listen();
+		this.emit(":responseReady")
+	},
 	SessionEndedRequest: function() {
 		this.attributes.sessionEnded = true;
 		// console.log("session ended!")
