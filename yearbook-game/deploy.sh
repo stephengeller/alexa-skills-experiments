@@ -20,7 +20,7 @@ function zip_files() {
 
 function upload_to_aws() {
     echo "Uploading to AWS Lambda..."
-    aws lambda update-function-code --publish --region us-east-1 --function-name ${FUNCTION_NAME} --zip-file fileb://${NAME_OF_ZIPPED_FILE}.zip &>/dev/null
+    aws lambda update-function-code --profile personal --publish --region us-east-1 --function-name ${FUNCTION_NAME} --zip-file fileb://${NAME_OF_ZIPPED_FILE}.zip
     rm -rf ${NAME_OF_ZIPPED_FILE}.zip
     echo "Done."
 }
