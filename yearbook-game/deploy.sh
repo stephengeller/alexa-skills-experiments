@@ -25,6 +25,6 @@ function upload_to_aws() {
     echo "Done."
 }
 
-lint_files
+#lint_files
 zip_files
 upload_to_aws

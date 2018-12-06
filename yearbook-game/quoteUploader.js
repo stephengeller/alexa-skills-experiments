@@ -9,11 +9,11 @@ const writeToDB = async params => {
 	await docClient.put(params, async (err, data) => {
 		if (err) {
 			console.log("Writing error");
-			console.log(err)
+			console.log(err);
 		} else {
-			await console.log("Upload successful\n")
+			await console.log("Upload successful\n");
 		}
-	})
+	});
 };
 
 async function uploadQuotes(quotes) {
@@ -37,7 +37,7 @@ async function uploadQuotes(quotes) {
 			putParams.Item.userId = `from_${from
 				.toLowerCase()
 				.replace(" ", "_")}_to_${person.to.toLowerCase().replace(" ", "_")}`;
-			await writeToDB(putParams)
+			await writeToDB(putParams);
 		}
 	}
 }
